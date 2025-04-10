@@ -1,0 +1,663 @@
+@use '../custom-overrides/border' as *;
+@use '../custom-overrides/colors' as *;
+@use '../custom-overrides/spacing' as *;
+@use '../component-styling/drop-shadow' as *;
+
+@-moz-keyframes the-datepicker-fade-out-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-out-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-out-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-out-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-out-right {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-out-right {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-out-right {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-out-right {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-out-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-out-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-out-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes the-datepicker-fade-out-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-out-down {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-out-down {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-out-down {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes the-datepicker-fade-out-down {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-in-up {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-in-up {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-in-up {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-in-up {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes the-datepicker-fade-in-down {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes the-datepicker-fade-in-down {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes the-datepicker-fade-in-down {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes the-datepicker-fade-in-down {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+body.the-datepicker-page {
+  overflow: hidden;
+}
+.the-datepicker__container {
+  position: absolute;
+  left: auto;
+  top: auto;
+  z-index: 99;
+  .the-datepicker__main {
+    @include shadow;
+    @include border-radius($border-radius-16);
+    // border-top-left-radius: 0;
+    a.the-datepicker__day-button {
+      width: 2.1em;
+    }
+    a.the-datepicker__year-cell-button {
+      width: 3.825em;
+    }
+    table.the-datepicker__table {
+      width: auto;
+    }
+  }
+}
+.the-datepicker__container.the-datepicker__container--responsive {
+  position: fixed;
+  left: 0;
+  top: 0;
+  .the-datepicker__main {
+    a.the-datepicker__day-button {
+      width: auto;
+    }
+    a.the-datepicker__year-cell-button {
+      width: auto;
+    }
+    table.the-datepicker__table {
+      width: 100%;
+    }
+  }
+}
+.the-datepicker__container.the-datepicker__container--over {
+  .the-datepicker__main {
+    @include border-radius($border-radius-16);
+    // border-top-left-radius: 0.3em;
+    // border-bottom-left-radius: 0;
+  }
+}
+.the-datepicker__container.the-datepicker__container--left {
+  .the-datepicker__main {
+    @include border-radius($border-radius-16);
+    // border-top-left-radius: 0.3em;
+    // border-top-right-radius: 0;
+  }
+}
+.the-datepicker__container.the-datepicker__container--over.the-datepicker__container--left {
+  .the-datepicker__main {
+    @include border-radius($border-radius-16);
+    // border-bottom-left-radius: 0.3em;
+    // border-top-right-radius: 0.3em;
+    // border-bottom-right-radius: 0;
+  }
+}
+.the-datepicker__main {
+  width: 320px;
+  height: auto;
+  background-color: $light;
+  border: 2px solid $bluestone-blue;
+  @include border-radius($border-radius-16);
+  // border-radius: 0.3em;
+  // font-family: $font-family_1;
+  line-height: 1em;
+  box-sizing: border-box;
+  overflow-y: auto;
+  .the-datepicker__header {
+    padding: 0.4em 0.4em 0 0.4em;
+  }
+  .the-datepicker__body {
+    margin-top: 1em;
+    padding: 0 0.4em 0.4em 0.4em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .the-datepicker__body.the-datepicker__body--swipeable {
+    touch-action: none;
+  }
+  th.the-datepicker__week-day {
+    padding: 0.5em 0;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: $card-header;
+    font-size: 0.85em;
+  }
+  a.the-datepicker__button {
+    display: block;
+    width: 2.1em;
+    padding: 0.6em 0;
+    text-decoration: none;
+    text-align: center;
+    color: $card-header;
+    border-radius: 0.3em;
+    &:hover {
+      background-color: $card-header;
+      color: $light;
+      text-decoration: none;
+    }
+  }
+  a.the-datepicker__day-button {
+    width: auto;
+  }
+  a.the-datepicker__year-button {
+    width: auto;
+    @include padding($padding-medium, 'horizontal');
+    @include margin($margin-small, 'horizontal');
+  }
+  a.the-datepicker__year-cell-button {
+    width: auto;
+  }
+  .the-datepicker__title {
+    display: inline-block;
+    width: 70%;
+  }
+  .the-datepicker__title-content {
+    display: inline-block;
+    padding: 0.5em;
+  }
+  .the-datepicker__control {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+  }
+  .the-datepicker__reset {
+    display: inline-block;
+    font-weight: bold;
+  }
+  .the-datepicker__close {
+    display: inline-block;
+    font-weight: bold;
+  }
+  .the-datepicker__navigation {
+    margin-top: 0.3em;
+  }
+  .the-datepicker__go {
+    display: inline-block;
+    width: 15%;
+    a.the-datepicker__button {
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+  .the-datepicker__go-next {
+    text-align: right;
+  }
+  .the-datepicker__state {
+    display: inline-block;
+    width: 70%;
+  }
+  .the-datepicker__month {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+  }
+  .the-datepicker__year {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+  }
+  .the-datepicker__month-year {
+    text-align: center;
+  }
+  select.the-datepicker__select {
+    font-size: 0.9em;
+    margin: 0;
+    @include padding($padding-small);
+    @include border-radius($border-round);
+    background-color: $bluestone-blue;
+    color: $light;
+    border: 2px solid $bluestone-blue;
+  }
+  table.the-datepicker__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td.the-datepicker__cell {
+    padding: 0;
+    a.the-datepicker__button {
+      padding: 0.1em;
+      margin: 0 auto;
+      .the-datepicker__button-content {
+        display: block;
+        text-align: center;
+        border-radius: 0.3em;
+      }
+      .the-datepicker__button-content.the-datepicker__day-content {
+        // padding: 0.6em 0;
+        @include padding($padding-medium, 'vertical');
+      }
+      .the-datepicker__button-content.the-datepicker__year-cell-content {
+        // padding: 0.755em 0;
+        @include padding($padding-medium, 'vertical');
+      }
+      &:hover {
+        background-color: $card-header;
+        .the-datepicker__button-content {
+          background-color: $card-header;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--highlighted {
+    a.the-datepicker__button {
+      .the-datepicker__button-content {
+        background-color: $secondary;
+      }
+    }
+  }
+  td.the-datepicker__day--outside {
+    a.the-datepicker__button {
+      color: $error;
+    }
+  }
+  td.the-datepicker__cell--unavailable {
+    a.the-datepicker__button {
+      color: $d-grey;
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $error;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--selected {
+    a.the-datepicker__button {
+      color: $light;
+      .the-datepicker__button-content {
+        background-color: $secondary;
+      }
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--selected.the-datepicker__cell--highlighted {
+    a.the-datepicker__button {
+      color: $light;
+      .the-datepicker__button-content {
+        background-color: $bluestone-blue;
+      }
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $bluestone-blue;
+        }
+      }
+    }
+  }
+  .the-datepicker__animated {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+  }
+}
+.the-datepicker__main.the-datepicker__main--darkmode {
+  background-color: $bluestone-blue;
+  border-color: $bluestone-blue;
+}
+.the-datepicker__container--responsive {
+  .the-datepicker__main {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+.the-datepicker__main--darkmode.the-datepicker__main {
+  a.the-datepicker__button {
+    &:hover {
+      background-color: $card-header;
+    }
+  }
+  select.the-datepicker__select {
+    background-color: $bluestone-blue;
+    color: $l-grey;
+  }
+  td.the-datepicker__cell {
+    a.the-datepicker__button {
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $card-header;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--highlighted {
+    a.the-datepicker__button {
+      .the-datepicker__button-content {
+        background-color: $card-header;
+      }
+    }
+  }
+  td.the-datepicker__day--outside {
+    a.the-datepicker__button {
+      color: $card-header;
+    }
+  }
+  td.the-datepicker__cell--unavailable {
+    a.the-datepicker__button {
+      color: $error;
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $bg;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--selected {
+    a.the-datepicker__button {
+      color: $light;
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $card-header;
+        }
+      }
+    }
+  }
+  td.the-datepicker__cell--selected.the-datepicker__cell--highlighted {
+    a.the-datepicker__button {
+      color: $light;
+      &:hover {
+        .the-datepicker__button-content {
+          background-color: $card-header;
+        }
+      }
+    }
+  }
+}
+.the-datepicker__deselect {
+  position: absolute;
+  .the-datepicker__deselect-button {
+    position: relative;
+    left: 321px;
+    top: 42px;
+    text-decoration: none;
+    color: $light;
+    background-color: $error;
+    @include padding($padding-large, 'horizontal');
+    @include padding($padding-medium, 'vertical');
+    @include border-radius($border-radius-8);
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.the-datepicker__fade-out-left {
+  animation-name: the-datepicker-fade-out-left;
+}
+.the-datepicker__fade-out-right {
+  animation-name: the-datepicker-fade-out-right;
+}
+.the-datepicker__fade-in-left {
+  animation-name: the-datepicker-fade-in-left;
+}
+.the-datepicker__fade-in-right {
+  animation-name: the-datepicker-fade-in-right;
+}
+.the-datepicker__fade-out-up {
+  animation-name: the-datepicker-fade-out-up;
+}
+.the-datepicker__fade-out-down {
+  animation-name: the-datepicker-fade-out-down;
+}
+.the-datepicker__fade-in-up {
+  animation-name: the-datepicker-fade-in-up;
+}
+.the-datepicker__fade-in-down {
+  animation-name: the-datepicker-fade-in-down;
+}
+@media (min-width: 37.5em) {
+  body.the-datepicker-page {
+    overflow: auto;
+  }
+  .the-datepicker__container.the-datepicker__container--responsive {
+    position: absolute;
+    left: auto;
+    top: auto;
+    .the-datepicker__main {
+      a.the-datepicker__day-button {
+        width: 2.1em;
+      }
+      a.the-datepicker__year-cell-button {
+        width: 3.825em;
+      }
+      table.the-datepicker__table {
+        width: auto;
+      }
+    }
+  }
+  .the-datepicker__container--responsive {
+    .the-datepicker__main {
+      width: 258px;
+      height: auto;
+    }
+  }
+}

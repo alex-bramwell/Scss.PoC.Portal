@@ -1,0 +1,32 @@
+$bluestone-blue: #006ed2;
+$secondary: #ff8300;
+$secondary-hover: #ffb566;
+$card-header: #00468c;
+$error: #ad3963;
+$success: #39ad84;
+$warning: #ffc700;
+$dark: #000000;
+$d-grey: #3c4146;
+$l-grey: #9da3a9;
+$bg: #eff0f1;
+$card-bg: #e6f1fb;
+$light: #ffffff;
+$transparent: rgba(255, 255, 255, 0);
+
+$custom-colors: (
+  'bluestone-blue': $bluestone-blue,
+  'secondary': $secondary,
+  'secondary-hover': $secondary-hover,
+  'card-header': $card-header,
+  'error': $error,
+  'warning': $warning,
+  'd-grey': $d-grey,
+  'l-grey': $l-grey,
+  'bg': $bg,
+  'card-bg': $card-bg,
+  'light': $light,
+);
+
+body {
+  background-color: $bg;
+}

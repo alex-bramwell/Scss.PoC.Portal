@@ -1,0 +1,44 @@
+// Margin variables
+$margin-none: 0px;
+$margin-small: 4px;
+$margin-medium: 8px;
+$margin-large: 16px;
+$margin-extra-large: 32px;
+
+// Padding variables
+$padding-none: 0px;
+$padding-small: 4px;
+$padding-medium: 8px;
+$padding-medium-large: 12px;
+$padding-large: 16px;
+$padding-extra-large: 24px;
+
+// Margin mixins
+@mixin margin($size, $direction: "all") {
+  @if $direction == "all" {
+    margin: $size;
+  } @else if $direction == "vertical" {
+    margin-top: $size;
+    margin-bottom: $size;
+  } @else if $direction == "horizontal" {
+    margin-left: $size;
+    margin-right: $size;
+  } @else {
+    margin-#{$direction}: $size;
+  }
+}
+
+// Padding mixins
+@mixin padding($size, $direction: "all") {
+  @if $direction == "all" {
+    padding: $size;
+  } @else if $direction == "vertical" {
+    padding-top: $size;
+    padding-bottom: $size;
+  } @else if $direction == "horizontal" {
+    padding-left: $size;
+    padding-right: $size;
+  } @else {
+    padding-#{$direction}: $size;
+  }
+}

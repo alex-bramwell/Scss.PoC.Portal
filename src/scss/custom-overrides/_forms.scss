@@ -1,0 +1,43 @@
+@use './colors';
+@use '../typography/fonts' as *;
+
+label {
+  &.form-label {
+    color: colors.$bluestone-blue;
+  }
+}
+
+input {
+  &.form-control {
+    width: 100%;
+    height: 44px;
+    border: 1px solid colors.$d-grey;
+    border-radius: 8px;
+
+    &.enlarged-border {
+      border: 2px solid colors.$error;
+    }
+  }
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+input,
+textarea {
+  @include placeholder {
+    color: colors.$d-grey;
+  }
+}

@@ -1,0 +1,22 @@
+@use '../custom-overrides/colors';
+@use '../custom-overrides/spacing' as *;
+
+footer {
+  color: colors.$light;
+  background-color: colors.$bluestone-blue;
+  @include padding($padding-large, 'vertical');
+
+  ul {
+    list-style: none;
+    @include margin($margin-none);
+  }
+
+  p {
+    @include margin($margin-none);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

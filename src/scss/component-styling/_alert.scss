@@ -1,0 +1,36 @@
+@use '../custom-overrides/border' as *;
+@use '../custom-overrides/colors';
+@use '../custom-overrides/spacing' as *;
+@use '../typography/fonts';
+
+.show-alert {
+  @include border-radius($border-radius-8, 'all');
+  @include padding($padding-medium);
+  color: colors.$light;
+
+  p {
+    @include margin($margin-none);
+  }
+
+  &.error {
+    background-color: colors.$error;
+  }
+
+  &.success {
+    background-color: colors.$success;
+  }
+
+  &.required {
+    background-color: colors.$bluestone-blue;
+  }
+
+  &.warning {
+    background-color: colors.$bluestone-blue;
+    color: colors.$light;
+  }
+
+  .alert-link {
+    text-decoration: underline;
+    font-weight: fonts.$font-weight-bold;
+  }
+}

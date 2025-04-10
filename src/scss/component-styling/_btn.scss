@@ -1,0 +1,46 @@
+@use '../custom-overrides/colors';
+@use '../typography/fonts' as *;
+@use '../custom-overrides/border' as *;
+@use '../custom-overrides/spacing' as *;
+
+.app-btn {
+  border: none;
+  @include border-radius($border-round);
+  @include padding($padding-extra-large, 'left');
+  @include padding($padding-large, 'right');
+  @include padding($padding-medium-large, 'vertical');
+  font-family: $font-family-button;
+  width: fit-content;
+
+  &.default {
+    background-color: colors.$secondary;
+    color: colors.$dark;
+
+    &:hover {
+      background-color: #ffb566;
+      color: colors.$dark;
+    }
+
+    &:active {
+      color: #ffcd99;
+    }
+  }
+
+  &.secondary {
+    background-color: colors.$transparent;
+    color: colors.$error;
+    @include padding($padding-none, 'left');
+    @include padding($padding-none, 'right');
+    @include padding($padding-medium-large, 'vertical');
+  }
+
+  &:hover,
+  active {
+    color: rgba(173, 57, 99, 0.5);
+  }
+}
+
+.level-with-card {
+  max-width: 416px;
+  margin: 0 auto;
+}

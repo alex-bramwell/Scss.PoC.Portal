@@ -1,0 +1,28 @@
+// Border radius variables
+$border-radius-4: 4px;
+$border-radius-8: 8px;
+$border-radius-12: 12px;
+$border-radius-16: 16px;
+$border-radius-24: 24px;
+$border-round: 100px;
+
+// Border radius mixins
+@mixin border-radius($size, $corner: "all") {
+  @if $corner == "all" {
+    border-radius: $size;
+  } @else if $corner == "top" {
+    border-top-left-radius: $size;
+    border-top-right-radius: $size;
+  } @else if $corner == "bottom" {
+    border-bottom-right-radius: $size;
+    border-bottom-left-radius: $size;
+  } @else if $corner == "left" {
+    border-top-left-radius: $size;
+    border-bottom-left-radius: $size;
+  } @else if $corner == "right" {
+    border-top-right-radius: $size;
+    border-bottom-right-radius: $size;
+  } @else {
+    @error "Invalid corner direction: #{corner}. Please choose between 'all', 'top', 'bottom', 'left', 'right'.";
+  }
+}

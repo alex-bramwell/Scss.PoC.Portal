@@ -1,0 +1,33 @@
+// Overide Bootstrap variables via (default! statement) values
+@import './redifined-overrides/index';
+
+// List Bootstrap variables/functions so they can be overidden
+@import '/node_modules/bootstrap/scss/functions';
+@import '/node_modules/bootstrap/scss/variables';
+// Add custom variables to Bootstrap
+@import './custom-overrides/index';
+
+// Map the custom assets back into the framework
+$theme-colors: map-merge($custom-colors, $theme-colors);
+
+// Genrate All Colours
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: $value !important;
+  }
+
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+//Inject Bootstrap framework
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+@import '/node_modules/bootstrap-icons/font/bootstrap-icons.min.css';
+
+//Component styling should take priority and fall last in line
+@import './component-styling/index';
+@import './typography/fonts';
+
+//Reset Values
+@import './reset/reset';

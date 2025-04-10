@@ -1,0 +1,14 @@
+@use "../custom-overrides/colors";
+@use "./drop-shadow" as *;
+@use "../custom-overrides/spacing" as *;
+
+.card {
+  background-color: colors.$light;
+  @include shadow;
+  @include padding($padding-extra-large);
+
+  &.card-max-width {
+    width: 416px;
+    margin: 0 auto;
+  }
+}
